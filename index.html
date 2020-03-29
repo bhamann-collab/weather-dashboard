@@ -12,12 +12,120 @@
     <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation-rtl.min.css" integrity="sha256-Az+E7JXW71Srarkum5QPTdnobddg2GqI1i8+nMusgLk= sha384-eBKuNtkGVmsJD0uNnWoKYYVnzDT0PXV+XNyAgmmZwYVn7MSNcaR4i5HjOpSRd0o6 sha512-d0RjiDZM/0NlD+7Y2DhUGuAUdwDIL5lS3GPAD0HEayEcrhuLuRiPYOgFWZik+gsFzsykxSn0KO6jim7ev8kIig==" crossorigin="anonymous">
     <!----------------- Foundation Declaration ends here ------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div class="outer-nav">
         <div class="top-bar align-center"> 
-          <h1>Weather Dashboard</h1>
+            <h1>Weather Dashboard</h1>
         </div>
-      </div>
+    </div>
+    <div class="content">
+        <div class="main-content">
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div class="cell">
+                        <div class="callout">
+                            <h1 id="name-city">Atlanta (8/15/2019)</h1>
+                            <h5 id="temperature">Temperature: 90.9 F</h3>
+                            <h5 id="Humidity">Humidiy: 41%</h3>
+                            <h5 id="wind-speed">Wind Speed: 4.7 MPH</h3>
+                            <h5 id="UV-index">UV Index: <span id="UV-index-color">9.49</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div class="cell">
+                        <h1>5-Day Forecast</h1>
+                    </div>
+                </div>
+                <div class="grid-x">
+                    <div class="cell small-6 medium-4">
+                        <div class="card" style="width: auto;">
+                            <div class="card-divider">
+                                <h4>8/16/2019</h2>
+                                <img src="./assets/img/svg/wi-rain.svg" alt="" class="img-responsive">
+                            </div>
+                            <div class="card-section">
+                                <h4>Temp: 86.84 F</h4>
+                                <h4>Humidity: 43%</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell small-6 medium-4">
+                        <div class="card" style="width: auto;">
+                            <div class="card-divider">
+                                <h4>8/17/2019</h4>
+                                <img src="./assets/img/svg/wi-rain.svg" alt="" class="img-responsive">
+                            </div>
+                            <div class="card-section">
+                                <h4>Temp: 86.84 F</h4>
+                                <h4>Humidity: 43%</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell small-6 medium-4">
+                        <div class="card" style="width: auto;">
+                            <div class="card-divider">
+                                <h4>8/18/2019</h4>
+                                <img src="./assets/img/svg/wi-rain.svg" alt="" class="img-responsive">
+                            </div>
+                            <div class="card-section">
+                                <h4>Temp: 86.84 F</h4>
+                                <h4>Humidity: 43%</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell small-6 medium-4">
+                        <div class="card" style="width: auto;">
+                            <div class="card-divider">
+                                <h4>8/19/2019</h4>
+                                <img src="./assets/img/svg/wi-rain.svg" alt="" class="img-responsive">
+                            </div>
+                            <div class="card-section">
+                                <h4>Temp: 86.84 F</h4>
+                                <h4>Humidity: 43%</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell small-6 medium-4">
+                        <div class="card" style="width: auto;">
+                            <div class="card-divider">
+                                <h4>8/20/2019</h4>
+                                <img src="./assets/img/svg/wi-rain.svg" alt="" class="img-responsive">
+                            </div>
+                            <div class="card-section">
+                                <h4>Temp: 86.84 F</h4>
+                                <h4>Humidity: 43%</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-city">
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div class="cell">
+                       <h2>Search for a City:</h1> 
+                    </div>
+                </div>
+                <div class="grid-x">
+                    <div class="cell">
+                        <ul class="menu align-center">
+                            <li><input type="search" placeholder="Search"></li>
+                            <li><button type="button" class="button" id="search-button">Search</button></li>
+                          </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

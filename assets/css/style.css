@@ -1,0 +1,47 @@
+
+/* Content */
+    .content {
+        display: flex;
+    }
+
+    .main-content {
+        background: #ecf0f1;
+        width: auto;
+        flex-grow: 4;
+        height: inherit;
+        min-width: 350px;
+
+    }
+
+    .search-city {
+        background: #bdc3c7;
+        min-width: 250px;
+        flex-grow: 3;
+        height: inherit;
+    }
+
+    span {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    #UV-index-color {
+        background: red;
+        color: white;
+    }
+
+    .card-divider {
+        background: #bdc3c7;
+    }
+/* Content */
+
+/* Media Query */
+@media only screen and (max-width: 650px) {
+    .content {
+        flex-wrap: wrap;
+    }
+    .search-city {
+        flex-grow: 1;
+    }
+  }
+/* Media Query */
