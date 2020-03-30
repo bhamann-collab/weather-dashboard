@@ -44,7 +44,7 @@ $(document).ready(function () {
         updateHumidity(weatherCurrent.humidity);
         updateWindSpeed(cityObject.list[0].wind.speed)
         updateCityUV(cityObject)
-        fiveDayForecast();
+        fiveDayForecast(cityObject);
         addCityToHistory();
     }
 
@@ -78,8 +78,21 @@ $(document).ready(function () {
         $("#UV-index-color").text(`${UVIndexValue}`);
     }
 
-    function fiveDayForecast() {
-        console.log("yeah")
+    function fiveDayForecast(city) {
+        $("#day-one").find(".temp").text(`Temp: ${(city.list[9].main.temp-273.15).toFixed(2)} C`)
+        $("#day-one").find(".humid").text(`Humidity: ${city.list[9].main.humidity}%`)
+
+        $("#day-two").find(".temp").text(`Temp: ${(city.list[17].main.temp-273.15).toFixed(2)} C`)
+        $("#day-two").find(".humid").text(`Humidity: ${city.list[17].main.humidity}%`)
+
+        $("#day-three").find(".temp").text(`Temp: ${(city.list[25].main.temp-273.15).toFixed(2)} C`)
+        $("#day-three").find(".humid").text(`Humidity: ${city.list[25].main.humidity}%`)
+
+        $("#day-four").find(".temp").text(`Temp: ${(city.list[33].main.temp-273.15).toFixed(2)} C`)
+        $("#day-four").find(".humid").text(`Humidity: ${city.list[33].main.humidity}%`)
+
+        $("#day-five").find(".temp").text(`Temp: ${(city.list[39].main.temp-273.15).toFixed(2)} C`)
+        $("#day-five").find(".humid").text(`Humidity: ${city.list[39].main.humidity}%`)
     }
 
     function addCityToHistory() {
