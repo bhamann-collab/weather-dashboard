@@ -65,8 +65,17 @@ $(document).ready(function () {
     }
 
     function updateUVIndex(UVIndex) {
-        console.log(UVIndex)
-        $("#UV-index-color").text(`${UVIndex[0].value}`)
+        var UVIndexValue = UVIndex[0].value;
+        if(UVIndexValue <= 2) {
+            $("#UV-index-color").css("background", "green");
+        } else if (UVIndexValue <= 5) {
+            $("#UV-index-color").css("background", "#CCCC00");
+        } else if (UVIndexValue <= 7) {
+            $("#UV-index-color").css("background", "orange");
+        } else {
+            $("#UV-index-color").css("background", "red");
+        }
+        $("#UV-index-color").text(`${UVIndexValue}`);
     }
 
     function fiveDayForecast() {
