@@ -1,24 +1,32 @@
 $(document).ready(function () {
-  $("#previous-cities").replaceWith(localStorage.getItem("city archive"));
+
+  //Uses local storage to get the previous cities that was searched
+  if(localStorage.getItem("city archive") !== null) {
+    $("#previous-cities").replaceWith(localStorage.getItem("city archive"));
+    var recentCity = $("#previous-cities").children()[0].innerHTML
+    //Latest city searched gets displayed when the website loads
+    updateCityStats(recentCity, false);
+  } 
+  
 
     //Getting the time on initial upload
     var date = new Date();
-
+    //When pressing enter, the searched city will appear in the archives and the weather statistics will be displayed if the name exists
     $("#search-bar").keyup(function(event) {
       if (event.keyCode === 13) {
           $("#search-button").click();
       }
   });
 
-    //When clicking on the Search button, The city gets saved to the archive and the function that holds the AJAX call gets called
+    //When clicking on the Search button, The city gets saved to the search history and the function that holds the AJAX call gets called
     $("#search-button").on('click', function() {
       var addCity = true;
       var cityInput = $("#search-bar").val();
       updateCityStats(cityInput, addCity);
     })
 
+    //Clicking on a previous city that has been searched will give you weather conditions 
     $("#previous-cities").on('click', '.city-archive' , function(){
-      console.log($(this).text())
       var addCity = false;
       var cityInput = $(this).text()
       updateCityStats(cityInput, addCity);
@@ -31,7 +39,6 @@ $(document).ready(function () {
         $.ajax({
             url: queryURL,
             success: function (response) {
-                console.log(response)
                 updatePage(response, addCity)
             },
             error: function () {
@@ -115,8 +122,8 @@ $(document).ready(function () {
         month[i] = time.getMonth() + 1
         year[i] = time.getYear() + 1900;
       }
-      console.log(date)
 
+        //displays weather conditions for the next 5 days
         $("#day-one").find(".temp").text(`Temp: ${(city.list[9].main.temp-273.15).toFixed(2)} C`);
         $("#day-one").find(".humid").text(`Humidity: ${city.list[9].main.humidity}%`);
         $("#day-one").find(".date").text(`${date[0]}/${month[0]}/${year[0]}`)
@@ -148,6 +155,7 @@ $(document).ready(function () {
 
     }
 
+    //Adds a recently searched city to the search history while storing it in local storage
     function addCityToHistory(cityInput, addCity) {
       if(addCity === true){
         $('#previous-cities').prepend(`<li class="city-archive">${cityInput}</li>`);
@@ -157,7 +165,6 @@ $(document).ready(function () {
 
     //Chooses images to represent the current state of the weather. It will represent an image for Rain, Snow, Clouds and Clear
     function chooseImage(weatherStatus, day) {
-      console.log(day)
       switch(weatherStatus) {
         case "Rain":
           day.find(".img-indicator").attr('src', './assets/img/svg/wi-rain.svg')

@@ -35,7 +35,9 @@
         background: #bdc3c7;
         min-width: 250px;
         flex-grow: 3;
-        height: inherit;
+        max-height: inherit;
+        overflow-y: scroll;
+
     }
 
     span {
@@ -54,7 +56,7 @@
 /* Content */
 
 /* Media Query */
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 800px) {
     .content {
         flex-wrap: wrap;
     }
