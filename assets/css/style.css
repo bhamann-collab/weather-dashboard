@@ -1,5 +1,23 @@
 
 /* Content */
+    li {
+        list-style: none;
+    }
+
+    .city-archive {
+        margin: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 1.4rem;
+        color: #130f40;
+        background: #c7ecee;
+        text-align: center;
+    }
+
+    .city-archive:hover {
+        cursor: pointer;
+    }
+
     .content {
         display: flex;
     }
