@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+  $("#previous-cities").replaceWith(localStorage.getItem("city archive"));
 
     //Getting the time on initial upload
     var date = new Date();
@@ -117,9 +117,6 @@ $(document).ready(function () {
       }
       console.log(date)
 
-
-
-        
         $("#day-one").find(".temp").text(`Temp: ${(city.list[9].main.temp-273.15).toFixed(2)} C`);
         $("#day-one").find(".humid").text(`Humidity: ${city.list[9].main.humidity}%`);
         $("#day-one").find(".date").text(`${date[0]}/${month[0]}/${year[0]}`)
@@ -154,6 +151,7 @@ $(document).ready(function () {
     function addCityToHistory(cityInput, addCity) {
       if(addCity === true){
         $('#previous-cities').prepend(`<li class="city-archive">${cityInput}</li>`);
+        localStorage.setItem("city archive", $("#previous-cities")[0].outerHTML)
       }
     }
 
