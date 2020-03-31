@@ -112,7 +112,7 @@ $(document).ready(function () {
       for(var i = 0; i < 5; i++){
         time.setDate(time.getDate() + 1)
         date[i] = time.getDate()
-        month[i] = time.getMonth()
+        month[i] = time.getMonth() + 1
         year[i] = time.getYear() + 1900;
       }
       console.log(date)
