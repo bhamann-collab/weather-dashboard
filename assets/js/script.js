@@ -35,7 +35,7 @@ $(document).ready(function () {
 
     //Function that holds the AJAX call to get the information of the weather for a chosen city. Once when the call is successful, we go to the main powerhouse function
     function updateCityStats(cityName, addCity) {
-        var queryURL = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&APPID=635d437441ea04900582285c2e4d3a35&cnt=42`;
+        var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&APPID=635d437441ea04900582285c2e4d3a35&cnt=42`;
         $.ajax({
             url: queryURL,
             success: function (response) {
@@ -50,7 +50,7 @@ $(document).ready(function () {
     //Function that holds the AJAX call to get the UV index information for a chosen city. Once when the call is sucessful, we go to a syncronous function that will change the dom relating to the UV index.
     function updateCityUV(cityObject) {
         var UVObject = "yo";
-        var queryURL = `http://api.openweathermap.org/data/2.5/uvi/forecast?appid=635d437441ea04900582285c2e4d3a35&lat=${cityObject.city.coord.lat}&lon=${cityObject.city.coord.lon}`;
+        var queryURL = `https://api.openweathermap.org/data/2.5/uvi/forecast?appid=635d437441ea04900582285c2e4d3a35&lat=${cityObject.city.coord.lat}&lon=${cityObject.city.coord.lon}`;
         $.ajax({
             url: queryURL,
             success: function (response) {
